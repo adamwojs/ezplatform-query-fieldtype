@@ -8,7 +8,7 @@ namespace EzSystems\EzPlatformQueryFieldType\eZ\ContentView;
 
 use eZ\Publish\Core\MVC\Symfony\View\Event\FilterViewParametersEvent;
 use eZ\Publish\Core\MVC\Symfony\View\ViewEvents;
-use EzSystems\EzPlatformQueryFieldType\API\QueryFieldService;
+use EzSystems\EzPlatformQueryFieldType\API\QueryFieldServiceInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class QueryResultsInjector implements EventSubscriberInterface
@@ -19,7 +19,7 @@ class QueryResultsInjector implements EventSubscriberInterface
     /** @var array */
     private $views;
 
-    public function __construct(QueryFieldService $queryFieldService, array $views)
+    public function __construct(QueryFieldServiceInterface $queryFieldService, array $views)
     {
         $this->queryFieldService = $queryFieldService;
         if (!isset($views['item']) || !isset($views['field'])) {
