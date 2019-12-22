@@ -116,7 +116,6 @@ final class EzSystemsEzPlatformQueryFieldTypeExtension extends Extension impleme
             // @todo validate name syntax
             $fieldTypeIdentifier = 'ezcontentquery_' . $name;
             
-            // tag the query field type service the identifier
             $this->defineFieldTypeService($container, $fieldTypeIdentifier, $config);
             $this->tagFieldTypeConverter($container, $fieldTypeIdentifier);
             $this->tagFieldTypeFormMapper($container, $config, $fieldTypeIdentifier);
