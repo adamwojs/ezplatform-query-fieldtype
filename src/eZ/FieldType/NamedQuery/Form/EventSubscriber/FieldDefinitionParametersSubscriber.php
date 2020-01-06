@@ -46,7 +46,7 @@ class FieldDefinitionParametersSubscriber implements EventSubscriberInterface
                 Type\TextType::class,
                 [
                     'label' => $parameter,
-                    'property_path' => sprintf('[Parameters][%s]', $parameter),
+                    'property_path' => sprintf('[%s]', $parameter),
                     'required' => false,
                 ]
             );
